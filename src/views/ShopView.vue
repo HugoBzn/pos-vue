@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+import MainNav from '../components/MainNav.vue';
+</script>
 
 <template>
   <div>
-    <h1>Shop vue</h1>
+    <MainNav />
   </div>
 </template>
