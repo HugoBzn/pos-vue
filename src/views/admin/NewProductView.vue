@@ -7,7 +7,7 @@ import Link from '@/components/Link.vue';
     <Link to="products">Volver</Link>
     <h1 class="text-4xl my-10">Nuevo producto</h1>
 
-    <div class="flex justify-center shadow">
+    <div class="flex justify-center shadow bg-slate-100 bg-opacity-20 rounded">
       <div class="mt-10 p-10 w-full 2xl:w-2/4">
         <FormKit type="form" submit-label="Agregar producto">
           <FormKit
