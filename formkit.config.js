@@ -3,12 +3,16 @@ import { generateClasses } from '@formkit/themes';
 const config = {
   config: {
     classes: generateClasses({
-      text: {
-        message: 'text-red-500',
+      global: {
+        label: 'block mb-1 font-bold text-lg',
+        input: 'text-black',
+        message: 'text-red-500 mb-2',
+        wrapper: 'space-y-2 mb-3',
       },
-      number: {
-        message: 'text-red-500',
-      },
+      text: {},
+      file: {},
+      number: {},
+      select: {},
     }),
   },
 };
