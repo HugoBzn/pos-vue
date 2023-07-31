@@ -2,7 +2,7 @@
 import Link from '@/components/Link.vue';
 import useImage from '../../composables/useImage';
 
-const { onFileChange } = useImage();
+const { url, onFileChange, isImageUpladed } = useImage();
 </script>
 
 <template>
@@ -12,7 +12,11 @@ const { onFileChange } = useImage();
 
     <div class="flex justify-center shadow bg-slate-100 bg-opacity-20 rounded lg:mr-20">
       <div class="mt-10 p-10 w-full 2xl:w-2/4">
-        <FormKit type="form" submit-label="Agregar producto">
+        <FormKit
+          type="form"
+          submit-label="Agregar producto"
+          incomplete-message="Hay algo incorrecto, revisa los mensajes"
+        >
           <FormKit
             type="text"
             label="Nombre"
@@ -32,6 +36,10 @@ const { onFileChange } = useImage();
             multiple="true"
             @change="onFileChange"
           />
+          <div v-if="isImageUpladed">
+            <p class="font-black">Imagen producto:</p>
+            <img :src="url" alt="Nueva imagen producto" class="w-32 rounded-lg" />
+          </div>
 
           <FormKit
             type="select"

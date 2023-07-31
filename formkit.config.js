@@ -14,7 +14,8 @@ const config = {
         fileItem: 'hidden',
       },
       submit: {
-        input: '$reset bg-green-500 hover:bg-green-700 w-full p-2 font-bold uppercase disabled:opacity-50',
+        input:
+          '$reset bg-green-500 hover:bg-green-700 w-full p-2 font-bold uppercase disabled:opacity-50 rounded',
       },
     }),
   },
