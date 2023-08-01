@@ -32,7 +32,7 @@ const submitHandler = async (data) => {
 </script>
 
 <template>
-  <div class="px-5">
+  <div class="px-5 pb-10 md:pl-20">
     <Link to="products">Volver</Link>
     <h1 class="text-4xl my-5">Nuevo producto</h1>
 
