@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { doc } from 'firebase/firestore';
 import { useFirestore, useDocument } from 'vuefire';
 import Link from '@/components/Link.vue';
-import { useProductsStore } from '@/stores/products';
+import { useProductsStore } from '../../stores/products';
 import useImage from '@/composables/useImage';
 
 // Validating Firestore
@@ -33,7 +33,12 @@ watch(product, (product) => {
 });
 
 const submitHandler = async (data) => {
-  console.log(data);
+  try {
+    await products.updateProduct(docRef, { ...data, url });
+    router.push({ name: 'products' });
+  } catch (error) {
+    console.log(error);
+  }
 };
 </script>
 
@@ -93,12 +98,12 @@ const submitHandler = async (data) => {
           />
 
           <div v-if="isImageUploaded">
-            <p class="font-black">Imagen Nueva:</p>
+            <p class="font-black">Imagen nueva:</p>
             <img :src="url" alt="Nueva imagen Producto" class="w-32 rounded-lg" />
           </div>
 
           <div v-else>
-            <p class="font-black">Imagen Actual:</p>
+            <p class="font-black">Imagen actual:</p>
             <img :src="formData.image" :alt="'Imagen de' + formData.image" class="w-32 rounded-lg" />
           </div>
 
