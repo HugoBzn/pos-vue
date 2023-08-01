@@ -14,12 +14,14 @@ import Logo from './Logo.vue';
       <RouterLink
         :to="{ name: 'products' }"
         class="rounded text-white font-bold p-3 md:p-2 text-xs md:text-base"
+        active-class="text-green-500"
       >
         Products
       </RouterLink>
       <RouterLink
         :to="{ name: 'sales' }"
         class="rounded text-white font-bold p-3 md:p-2 text-xs md:text-base"
+        active-class="text-green-500"
       >
         Sales
       </RouterLink>

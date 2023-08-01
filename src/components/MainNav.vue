@@ -10,7 +10,7 @@ import Logo from './Logo.vue';
     </div>
 
     <nav class="mt-1">
-      <Link to="admin"> Administrar </Link>
+      <Link to="products"> Administrar </Link>
     </nav>
   </header>
 </template>
