@@ -15,8 +15,16 @@ const formData = reactive({
   image: '',
 });
 
-const submitHandler = (data) => {
-  console.log(data);
+const submitHandler = async (data) => {
+  const { image, ...values } = data;
+  try {
+    await products.createProduct({
+      ...values,
+      image: url.value,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 </script>
 
