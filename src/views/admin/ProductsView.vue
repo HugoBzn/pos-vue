@@ -9,9 +9,11 @@ const products = useProductsStore();
 <template>
   <div class="px-5">
     <Link to="new-product">Nuevo Producto</Link>
-    <h1 class="text-4xl my-5">Productos</h1>
 
-    <ul role="list" class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
+    <h1 class="text-4xl my-5">Productos</h1>
+    <h1 v-if="products.noResults" class="text-4xl my-5">No hay productos</h1>
+
+    <ul v-else role="list" class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5">
       <Product v-for="product in products.productsCollection" :key="product.id" :product="product" />
     </ul>
   </div>

@@ -20,8 +20,10 @@ export const useProductsStore = defineStore('products', () => {
     return options;
   });
 
-  const q = query(collection(db, 'products'));
+  const q = query(collection(db, 'products'), orderBy('availability', 'desc'));
   const productsCollection = useCollection(q);
+
+  const noResults = computed(() => productsCollection.value.length === 0);
 
   async function createProduct(product) {
     await addDoc(collection(db, 'products'), product);
@@ -31,5 +33,6 @@ export const useProductsStore = defineStore('products', () => {
     createProduct,
     categoryOptions,
     productsCollection,
+    noResults,
   };
 });
