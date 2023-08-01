@@ -6,14 +6,24 @@ import Logo from './Logo.vue';
 
 <template>
   <header class="px-5 py-5 bg-gray-800 flex justify-between absolute top-0 w-full z-10">
-    <div>
+    <div class="mt-0.5 md:mt-0">
       <Logo />
     </div>
 
     <nav class="flex">
-      <RouterLink :to="{ name: 'products' }" class="rounded text-white font-bold p-2"> Products </RouterLink>
-      <RouterLink :to="{ name: 'sales' }" class="rounded text-white font-bold p-2"> Sales </RouterLink>
-      <div class="flex text-center">
+      <RouterLink
+        :to="{ name: 'products' }"
+        class="rounded text-white font-bold p-3 md:p-2 text-xs md:text-base"
+      >
+        Products
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'sales' }"
+        class="rounded text-white font-bold p-3 md:p-2 text-xs md:text-base"
+      >
+        Sales
+      </RouterLink>
+      <div class="flex text-center ml-2">
         <Link to="shop"> Ir a Tienda </Link>
       </div>
     </nav>

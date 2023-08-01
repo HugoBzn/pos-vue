@@ -9,7 +9,10 @@ defineProps({
 </script>
 
 <template>
-  <RouterLink :to="{ name: to }" class="rounded bg-green-500 hover:bg-green-500 font-bold py-2 px-10">
+  <RouterLink
+    :to="{ name: to }"
+    class="rounded bg-green-500 hover:bg-green-500 font-bold py-3 md:py-2 px-3 md:px-10 h-10 text-xs md:text-base"
+  >
     <slot></slot>
   </RouterLink>
 </template>

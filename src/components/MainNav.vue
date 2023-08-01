@@ -5,11 +5,11 @@ import Logo from './Logo.vue';
 
 <template>
   <header class="px-5 py-5 bg-gray-800 flex justify-between absolute top-0 w-full z-10">
-    <div>
+    <div class="mt-0.5 md:mt-0">
       <Logo />
     </div>
 
-    <nav class="mt-2">
+    <nav class="mt-1">
       <Link to="admin"> Administrar </Link>
     </nav>
   </header>

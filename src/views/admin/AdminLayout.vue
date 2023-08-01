@@ -5,7 +5,7 @@ import AdminNav from '@/components/AdminNav.vue';
 <template>
   <AdminNav />
 
-  <div class="pt-32 container mx-auto lg:min-h-screen lg:pl-20">
+  <div class="pt-32 container mx-auto lg:min-h-screen">
     <RouterView />
   </div>
 </template>
