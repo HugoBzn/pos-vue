@@ -27,13 +27,13 @@ export default function useImage() {
     );
   };
 
-  const isImageUpladed = computed(() => {
+  const isImageUploaded = computed(() => {
     return url.value ? url.value : null;
   });
 
   return {
     url,
     onFileChange,
-    isImageUpladed,
+    isImageUploaded,
   };
 }

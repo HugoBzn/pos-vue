@@ -5,7 +5,7 @@ import Link from '@/components/Link.vue';
 import useImage from '../../composables/useImage';
 import { useProductsStore } from '../../stores/products';
 
-const { url, onFileChange, isImageUpladed } = useImage();
+const { url, onFileChange, isImageUploaded } = useImage();
 const products = useProductsStore();
 const router = useRouter();
 
@@ -66,7 +66,7 @@ const submitHandler = async (data) => {
             @change="onFileChange"
             v-model.trim="formData.image"
           />
-          <div v-if="isImageUpladed">
+          <div v-if="isImageUploaded">
             <p class="font-black">Imagen producto:</p>
             <img :src="url" alt="Nueva imagen producto" class="w-32 rounded-lg" />
           </div>

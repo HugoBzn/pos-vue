@@ -20,7 +20,7 @@ export const useProductsStore = defineStore('products', () => {
     return options;
   });
 
-  const q = query(collection(db, 'products'), orderBy('availability', 'desc'));
+  const q = query(collection(db, 'products'), orderBy('availability', 'asc'));
   const productsCollection = useCollection(q);
 
   const noResults = computed(() => productsCollection.value.length === 0);
