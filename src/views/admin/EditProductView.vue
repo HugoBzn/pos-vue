@@ -7,6 +7,20 @@ import Link from '@/components/Link.vue';
 import { useProductsStore } from '@/stores/products';
 import useImage from '@/composables/useImage';
 
+// Validating Firestore
+const route = useRoute();
+const router = useRouter();
+const db = useFirestore();
+const docRef = doc(db, 'products', route.params.id);
+const product = useDocument(docRef);
+
+watch(product, (product) => {
+  if (!product) {
+    router.push({ name: 'products' });
+  }
+  Object.assign(formData, product);
+});
+
 const { onFileChange, url, isImageUploaded } = useImage();
 const products = useProductsStore();
 
@@ -76,12 +90,12 @@ const formData = reactive({
 
           <div v-if="isImageUploaded">
             <p class="font-black">Imagen Nueva:</p>
-            <img :src="url" alt="Nueva imagen Producto" class="w-52" />
+            <img :src="url" alt="Nueva imagen Producto" class="w-32 rounded-lg" />
           </div>
 
           <div v-else>
             <p class="font-black">Imagen Actual:</p>
-            <img :src="formData.image" :alt="'Imagen de' + formData.image" class="w-52" />
+            <img :src="formData.image" :alt="'Imagen de' + formData.image" class="w-32 rounded-lg" />
           </div>
 
           <FormKit
