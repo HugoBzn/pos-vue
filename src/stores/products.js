@@ -27,6 +27,10 @@ export const useProductsStore = defineStore('products', () => {
 
   const noResults = computed(() => productsCollection.value.length === 0);
 
+  const filteredProducts = computed(() => {
+    return productsCollection.value;
+  });
+
   async function createProduct(product) {
     await addDoc(collection(db, 'products'), product);
   }
@@ -62,6 +66,7 @@ export const useProductsStore = defineStore('products', () => {
     deleteProduct,
     categoryOptions,
     productsCollection,
+    filteredProducts,
     noResults,
   };
 });
