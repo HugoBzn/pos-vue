@@ -7,7 +7,7 @@ export const useCartStore = defineStore('cart', () => {
   const MAX_PRODUCTS = 5;
 
   function addItem(item) {
-    items.value.push(item);
+    items.value.push({ ...item, quantity: 1, id: item.id });
   }
 
   const isEmpty = computed(() => items.value.length === 0);
@@ -16,10 +16,15 @@ export const useCartStore = defineStore('cart', () => {
     return (product) => (product.availability < MAX_PRODUCTS ? product.availability : MAX_PRODUCTS);
   });
 
+  function updateQuantity(id, quantity) {
+    items.value = items.value.map((item) => (item.id === id ? { ...item, quantity } : item));
+  }
+
   return {
     items,
     addItem,
     isEmpty,
     checkProductAvailability,
+    updateQuantity,
   };
 });
