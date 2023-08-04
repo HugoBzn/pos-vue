@@ -24,7 +24,7 @@ const cart = useCartStore();
       </Amount>
       <Amount>
         <template #label>Impuestos:</template>
-        {{ formatCurrency(0) }}
+        {{ formatCurrency(cart.taxes) }}
       </Amount>
       <Amount>
         <template #label>Total a pagar:</template>
