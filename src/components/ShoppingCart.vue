@@ -1,6 +1,7 @@
 <script setup>
 import Amount from './Amount.vue';
 import ShoppingCartItem from './ShoppingCartItem.vue';
+import CuponForm from './CuponForm.vue';
 import { useCartStore } from '../stores/cart';
 import { formatCurrency } from '../helpers';
 
@@ -31,5 +32,7 @@ const cart = useCartStore();
         {{ formatCurrency(cart.total) }}
       </Amount>
     </dl>
+
+    <CuponForm />
   </div>
 </template>
