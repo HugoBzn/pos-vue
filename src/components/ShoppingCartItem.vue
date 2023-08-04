@@ -20,6 +20,7 @@ defineProps({
       <select
         class="w-24 h-10 text-center p-2 rounded-lg bg-slate-100 bg-opacity-20 shadow"
         @change="cart.updateQuantity(item.id, +$event.target.value)"
+        :value="item.quantity"
       >
         <option v-for="n in cart.checkProductAvailability(item)" :value="n" class="text-black">
           {{ n }}
