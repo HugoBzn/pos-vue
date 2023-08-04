@@ -46,6 +46,10 @@ export const useCartStore = defineStore('cart', () => {
     items.value = items.value.map((item) => (item.id === id ? { ...item, quantity } : item));
   }
 
+  function removeItem(id) {
+    items.value = items.value.filter((item) => item.id !== id);
+  }
+
   return {
     items,
     subtotal,
@@ -55,5 +59,6 @@ export const useCartStore = defineStore('cart', () => {
     isEmpty,
     checkProductAvailability,
     updateQuantity,
+    removeItem,
   };
 });
