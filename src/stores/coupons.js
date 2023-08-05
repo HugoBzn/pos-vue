@@ -4,6 +4,7 @@ import { defineStore } from 'pinia';
 export const useCouponsStore = defineStore('coupon', () => {
   const couponInput = ref('');
   const couponValidationMessage = ref('');
+  const discountPercentaje = ref(0);
 
   const VALID_COUPONS = [
     { name: '10DESCUENTO', discount: 0.1 },
@@ -13,12 +14,16 @@ export const useCouponsStore = defineStore('coupon', () => {
   function applyCoupon() {
     if (VALID_COUPONS.some((coupon) => coupon.name === couponInput.value)) {
       couponValidationMessage.value = 'Aplicando...';
+      setTimeout(() => {
+        discountPercentaje.value = VALID_COUPONS.find((coupon) => coupon.name === couponInput.value).discount;
+        couponValidationMessage.value = '¡Descuento aplicado!';
+      }, 3000);
     } else {
       couponValidationMessage.value = 'No existe ese cupón';
     }
     setTimeout(() => {
       couponValidationMessage.value = '';
-    }, 5000);
+    }, 6000);
   }
   return {
     couponInput,
