@@ -22,4 +22,8 @@ const couponStore = useCouponsStore();
       Canjear
     </button>
   </div>
+
+  <p class="py-2 text-center text-sm font-extrabold">
+    {{ couponStore.couponValidationMessage }}
+  </p>
 </template>
