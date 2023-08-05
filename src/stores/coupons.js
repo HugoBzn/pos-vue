@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { defineStore } from 'pinia';
 import { useCartStore } from './cart';
 
@@ -33,10 +33,14 @@ export const useCouponsStore = defineStore('coupon', () => {
       couponValidationMessage.value = '';
     }, 6000);
   }
+
+  const isValidCoupon = computed(() => discountPercentaje.value > 0);
+
   return {
     couponInput,
     discount,
     couponValidationMessage,
     applyCoupon,
+    isValidCoupon,
   };
 });

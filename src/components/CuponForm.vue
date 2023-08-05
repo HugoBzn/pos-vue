@@ -16,8 +16,9 @@ const couponStore = useCouponsStore();
     />
     <button
       type="button"
-      class="p-3 bg-green-500 hover:bg-green-600 font-bold rounded-lg rounded-l-none"
+      class="p-3 bg-green-500 hover:bg-green-600 font-bold rounded-lg rounded-l-none disabled:opacity-50 disabled:bg-green-500"
       @click="couponStore.applyCoupon"
+      :disabled="couponStore.isValidCoupon"
     >
       Canjear
     </button>
