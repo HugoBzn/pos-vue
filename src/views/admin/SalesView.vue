@@ -38,7 +38,7 @@ console.log(sales.salesCollection);
         <p v-else class="text-center text-2xl">Selecciona una fecha</p>
 
         <div v-if="sales.salesCollection.length" class="space-y-5">
-          <p class="text-right text-2xl">
+          <p class="text-center md:text-right text-2xl">
             Total del día
             <span class="font-black text-green-500"> {{ formatCurrency(sales.totalSalesPerDay) }} </span>
           </p>
