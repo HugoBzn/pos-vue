@@ -10,7 +10,9 @@ const products = useProductsStore();
   <div class="px-5">
     <Link to="new-product">Nuevo Producto</Link>
 
-    <h1 v-if="products.noResults" class="text-4xl my-5">No hay productos</h1>
+    <h1 v-if="products.noResults" class="text-4xl my-5">
+      No hay <span class="text-green-500">productos</span>
+    </h1>
 
     <div v-else>
       <h1 class="text-4xl my-5">Productos</h1>
