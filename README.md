@@ -1,6 +1,12 @@
 # pos-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+This project works as a point of sale, where you can buy clothes, this works with an admin panel without log in and we can see the products and we can create, delete and modify. 👕 👟 🕶️
+
+This project is a Fullstack Project, working with Firestore and Vue 3 (Composition API).
+
+This project is using Vue-router 🛣️, Pinia 🍍, Composables 📈, Firestore 🔥, Vuefire 💚, TailwindCSS 💙.
+
+This idea is from a course made it by Juan de la Torre (Udemy) 🤓.
 
 ## Recommended IDE Setup
 
