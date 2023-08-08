@@ -20,10 +20,15 @@ export const useSalesStore = defineStore('sales', () => {
 
   const noSales = computed(() => !salesCollection.lenght && date.value);
 
+  const totalSalesPerDay = computed(() => {
+    return salesCollection.value ? salesCollection.value.reduce((total, sale) => total + sale.total, 0) : 0;
+  });
+
   return {
     date,
     isDateSelected,
     salesCollection,
     noSales,
+    totalSalesPerDay,
   };
 });
