@@ -29,15 +29,19 @@ console.log(sales.salesCollection);
           v-model="sales.date"
         />
       </div>
-      <div class="md:w-1/2 lg:w-2/3 space-y-5 lg:overflow-y-auto p-5 pb-32">
-        <p v-if="sales.isDateSelected" class="text-center text-lg">
+      <div class="md:w-1/2 lg:w-2/3 space-y-5 lg:h-screen lg:overflow-y-auto p-5 pb-32">
+        <p v-if="sales.isDateSelected" class="text-center text-2xl">
           Ventas de la fecha <span class="font-black text-green-500">{{ sales.date }}</span>
         </p>
-        <p v-else class="text-center text-lg">Selecciona una fecha</p>
+        <p v-else class="text-center text-2xl">Selecciona una fecha</p>
 
-        <div class="space-y-5">
+        <div v-if="sales.salesCollection.length" class="space-y-5">
           <SaleDetails v-for="sale in sales.salesCollection" :key="sale.id" :sale="sale" />
         </div>
+
+        <p v-else-if="sales.noSales" class="text-2xl text-center">
+          No hay ventas <span class="text-green-500">en este día</span>
+        </p>
       </div>
     </div>
   </div>

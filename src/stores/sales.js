@@ -18,9 +18,12 @@ export const useSalesStore = defineStore('sales', () => {
 
   const isDateSelected = computed(() => date.value);
 
+  const noSales = computed(() => !salesCollection.lenght && date.value);
+
   return {
     date,
     isDateSelected,
     salesCollection,
+    noSales,
   };
 });
