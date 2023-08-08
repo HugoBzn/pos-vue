@@ -15,6 +15,7 @@
     "uid": "^2.0.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.2",
+    "vue-tailwind-datepicker": "^1.4.5",
     "vuefire": "^3.1.12"
   },
   "devDependencies": {
