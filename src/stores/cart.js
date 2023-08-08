@@ -70,9 +70,20 @@ export const useCartStore = defineStore('cart', () => {
         total: total.value,
         date: getCurrentDate(),
       });
+
+      // Reset the state
+      $reset();
+      coupon.$reset();
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function $reset() {
+    items.value = [];
+    subtotal.value = 0;
+    taxes.value = 0;
+    total.value = 0;
   }
 
   return {
